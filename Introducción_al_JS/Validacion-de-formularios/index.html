@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validaFormulario(){
+            let nombre=document.getElementById("Nombre");
+            if(nombre.value.length<6){
+                alert("La longuitud mínima del nombre es de 6");
+                nombre.focus();
+                return false;
+            }
+            
+            
+            let edad=document.getElementById("edad");
+            if(edad.value<18){
+
+            alert("No tienes la mayoría de edad no puedes enviar el formulario");
+                edad.focus();
+                return false;
+            }
+            
+
+            let provincia=document.getElementById("provincia");
+            if(provincia.value=="elija"){
+                alert("Debe seleccionar una Provincia");
+                provincia.focus();
+                return false;
+            }
+            alert("Datos correctos procedo a enviar");
+            return true;
+            
+        }       
+       
+            
+        
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Alta Cliente</h1>
+    </header>
+    <main>
+        <section>
+            <form action="alta-cliente.php" onsubmit="return validaFormulario()">
+                <div>
+                <label>
+                    Nombre:
+                    <input type="text" name="Nombre" id="Nombre" placeholder="Escribe tú nombre" >
+                </label>
+                </div>
+                <div>
+                <label>
+                    Edad: <input type="number" name="Edad" id="edad" >
+
+                </label>
+                
+                </div>
+                <div>
+                    <label for="provincia">
+                        Provincia
+                    </label>
+                    
+                    <select name="provincia" id="provincia">
+                        <option value="elija">Elija una</option>
+                        <option value="cr">Ciudad Real</option>
+                        <option value="ab">Albacete</option>
+                        <option value="TL">Toledo</option>
+                        <option value="G">Guadalajara</option>
+                        <option value="C">Cuenca</option>
+                    </select>
+
+                </div>
+
+                <label for="">
+                    He leído y acepto las condiciones.
+                </label>
+
+                <label>
+                    <input type="submit" value="Dar de Alta">
+                </label>
+                
+                
+            </form>
+        </section>
+    </main>
+</body>
+</html>
