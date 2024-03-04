@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid red;
+/*Comentario*/
+        }
+        #display3{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apartado 1</h1>
+       <table>
+            
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+
+            </tr>
+            <tr>
+                <td id="display"></td>
+                <td id="display2"></td>
+            </tr>
+       </table> 
+
+       <h1>Apartado 2</h1>
+       <button onclick="nota()"> Calificación</button>
+       <h1>Apartado 3</h1>
+       <button onclick="tresnumeros()">Tres Números</button>
+       <p id="resultado"></p>
+       <h1>Apartado 4</h1>
+       <button onclick="media()">Media</button>
+    <script>
+        /*Apartado 1*/
+        let Nombre = prompt("¿Díme un nombre?");
+        let Correo = prompt("¿Díme un correo?");
+        
+        let resultadonombre=document.getElementById("display")
+
+        let resultadocorreo=document.getElementById("display2")
+
+        resultadonombre.innerHTML=Nombre;
+        resultadocorreo.innerHTML=Correo;
+
+    </script>
+
+    <script>
+        /*Apartado 2*/
+
+        function nota(){
+            n1=prompt("¿Dime tú nota?");
+            resultado=calificacion(n1);
+        }
+        function calificacion(n1){
+            if(n1<5){
+                return alert("Tú calificación es Insuficiente.")
+            }
+            if(n1==5){
+                return alert("Tú calificación es Suficiente.")
+            }
+            if(n1==6){
+                return alert("Tú calificación es Bien.")
+            }
+            if(n1<=8 && n1>6){
+                return alert("Tú calificación es Notable.")
+            }
+            if(n1 >=9){
+                return alert("Tú calificación es Sobresaliente.")
+            }
+        }
+    </script>
+    <script>
+        /*Apartado 3*/
+        function tresnumeros(){
+            let n1 = prompt("Dime un número")
+            let n2 = prompt("Dime un número")
+            let n3 = prompt("Dime un número")
+
+            if(n1<10||n2<10||n3<10){
+                 
+                let display3=document.getElementById("resultado")
+                display3.innerHTML="Alguno de los números es menor a diez."
+            }
+        }
+    </script>
+    <script>
+        /*Apartado 4*/
+        function media(){
+            let n1 = Number(prompt("Dime el numero"));
+            let n2 = Number(prompt("Dime el numero"));
+            let n3 = Number(prompt("Dime el numero"));
+            let media= mediatresnumeros(n1,n2,n3);
+            alert(media);
+        }
+        function mediatresnumeros(num1,num2,num3){
+            media=(num1+num2+num3)/3;
+            
+            
+
+            if(media>5){
+                let resultado1= alert("Promociona")
+                
+            }
+            else{
+                let resultado1= alert("No promociona")
+                
+            }
+            return resultado1;
+            
+        }
+        
+    </script>
+</body>
+</html>

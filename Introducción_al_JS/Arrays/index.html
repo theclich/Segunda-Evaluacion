@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            border: 2px solid red;
+            width: auto;
+            border-radius: 10px;
+            margin: auto;
+            overflow: auto;
+            padding: 10px;
+        }
+        #display1{
+            border: 2px solid red;
+            width: auto;
+            border-radius: 10px;
+            margin: auto;
+            overflow: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uso de arrays</h1>
+    <button onclick="diceAlineacion()">Alineacion</button>
+    <button onclick="imprimealineacion()">Imprimir Alineación</button>
+    <button onclick="cambiaimagen()">Cambia Imagen</button>
+    <button onclick="tablasmultiplicar()">Tablas Multiplicar</button>
+    <img id="imagen" src="" alt="" width="100" height="100">
+    <p id="display"></p>
+    <p id="display1"></p>
+    <script>
+        function cambiaimagen(){
+            let imagen = document.getElementById("imagen");
+            imagen.src = "" 
+        }
+        let alineacion=["Bale","Butrageño","Ronaldo","Messi","Vinicius"];
+        function diceAlineacion(){
+        alineacion.push("Ronaldinho"); /*Se añaden un elemento al array a la derecha*/
+        alineacion.unshift("Kaka"); /*Se añaden un elemento al array a la izquierda*/
+        let posicion= prompt("Dime la posición");
+        alert("En la posicion " + posicion + " juega " + alineacion[posicion]);
+        alert("Hay " + alineacion.length + " jugadores"); 
+        if(posicion>=alineacion.length){
+            alert("Esta posición no existe");
+        }
+        }
+    
+        function imprimealineacion(){
+            let display =document.getElementById("display");
+            display.innerHTML="<ul>"
+           ;
+            for(let i=0;i<alineacion.length;i++){
+                display.innerHTML = display.innerHTML + "<li>" + alineacion[i]+ "</li>";
+            /*document.write("<li>" + alineacion[i]+ "</li>");*/
+            display.style.backgroundColor = "yellow";
+            display.style.width= "30%";
+
+            }
+            /*document.write("</ul>")*/
+            display.innerHTML= display.innerHTML + "</ul>";
+
+            
+
+        }
+        function tablasmultiplicar(){
+            let numero=prompt("Dime un numero");
+            for(let i=0;i<=10;i++){
+                display1.innerHTML = display1.innerHTML + "<li>"+ numero+ "x"+i+"="+numero*[i]+"</li>";
+            }
+            /*document.write("</ul>")*/
+        }
+    </script>
+</body>
+</html>
