@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            padding: 10px;
+            margin: auto;
+        }
+        #alta{
+            display: block;
+        }
+    </style>
     <script>
         function validaFormulario(){
             let nombre=document.getElementById("Nombre");
@@ -29,6 +38,23 @@
                 provincia.focus();
                 return false;
             }
+
+
+           let acepto=document.getElementById("acepto");
+            if(acepto.checked== false){
+                alert("Debe seleccionar la casilla");
+                acepto.focus();
+                return false;
+            }
+
+            let contraseña=document.getElementById("contraseña");
+            if(contraseña.value.length <10){
+                alert("Introduce una contraseña más larga");
+                contraseña.focus();
+                return false;
+            }
+
+
             alert("Datos correctos procedo a enviar");
             return true;
             
@@ -73,13 +99,16 @@
                     </select>
 
                 </div>
-
+                <label>Contraseña:
+                    <input type="password" name="contraseña" id="contraseña">
+                </label>
+                <div>
                 <label for="">
                     He leído y acepto las condiciones.
                 </label><input type="checkbox" name="acepto" id="acepto">
+                </div>
                 
-
-                <label>
+                <label id="alta">
                     <input type="submit" value="Dar de Alta">
                 </label>
                 
